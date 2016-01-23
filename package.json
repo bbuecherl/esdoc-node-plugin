@@ -1,0 +1,25 @@
+{
+  "name": "esdoc-node-plugin",
+  "version": "0.1.0",
+  "description": "Node.js Module Plugin for ESDoc",
+  "main": "plugin.js",
+  "scripts": {
+    "install": "node ./install.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbuecherl/esdoc-node-plugin.git"
+  },
+  "keywords": [
+    "esdoc",
+    "plugin",
+    "documentation"
+  ],
+  "author": "Bernhard Bücherl <bernhard.buecherl@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbuecherl/esdoc-node-plugin/issues"
+  },
+  "homepage": "https://github.com/bbuecherl/esdoc-node-plugin#readme"
+}
