@@ -10,7 +10,7 @@ function addTags(list, tags) {
     for(var key2 in mods) {
       var link = mods[key2];
       if(key2 !== "$base")
-        addTag(list, key + "." + key2, key, link);
+        addTag(list, key2, key, link);
       else
         addTag(list, key, key, link);
     }
