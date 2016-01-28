@@ -2,6 +2,15 @@ var https = require("https");
 var fs = require("fs");
 var path = require("path");
 
+var replaceSpecials = (function() {
+  var regex = /[\(\)\[\]\{\}\,\ \.\:]+/gi;
+  var regex2 = / /gi;
+
+  return function(text) {
+    return text.replace(regex, " ").toLowerCase().trim().replace(regex2, "_");
+  };
+})();
+
 https.get("https://nodejs.org/api/all.json", function(response) {
   var body = "";
   response.on("data", function(chunk) {
@@ -20,15 +29,6 @@ https.get("https://nodejs.org/api/all.json", function(response) {
 function generateAPIExternals(API) {
   var APIMOD = API.modules;
   var APITAGS = {};
-
-  var replaceSpecials = (function() {
-    var regex = /[\(\)\[\]\{\}\,\ \.\:]+/gi;
-    var regex2 = / /gi;
-
-    return function(text) {
-      return text.replace(regex, " ").toLowerCase().trim().replace(regex2, "_");
-    };
-  })();
 
   for(var i = 0; i < APIMOD.length; ++i) {
     var mod = APIMOD[i];

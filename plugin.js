@@ -1,21 +1,17 @@
 var API = require("./externals.json");
 
 exports.onHandleTag = function(ev) {
-  addTags(ev.data.tag, API);
-};
-
-function addTags(list, tags) {
-  for(var key in tags) {
-    var mods = tags[key];
+  for(var key in API) {
+    var mods = API[key];
     for(var key2 in mods) {
       var link = mods[key2];
       if(key2 !== "$base")
-        addTag(list, key2, key, link);
+        addTag(ev.data.tag, key2, key, link);
       else
-        addTag(list, key, key, link);
+        addTag(ev.data.tag, key, key, link);
     }
   }
-}
+};
 
 function addTag(tagList, tagname, memberof, external) {
   tagList.push({
