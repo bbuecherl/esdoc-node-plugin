@@ -1,6 +1,6 @@
 {
   "name": "esdoc-node-plugin",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Node.js Module Plugin for ESDoc",
   "main": "plugin.js",
   "scripts": {
